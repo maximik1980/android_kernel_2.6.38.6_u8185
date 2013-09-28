@@ -27,6 +27,7 @@
 #include <linux/wait.h>
 #include <linux/dma-mapping.h>
 #include <linux/delay.h>
+#include <linux/slab.h>
 
 #include <asm/atomic.h>
 #include <asm/ioctls.h>
@@ -88,8 +89,6 @@ or include a suitable header file if you have it.
 #define VOCPCM_IOCTL_MAGIC 'v'
 #define VOCPCM_REGISTER_CLIENT _IOW(VOCPCM_IOCTL_MAGIC, 0, unsigned)
 #define VOCPCM_UNREGISTER_CLIENT _IOW(VOCPCM_IOCTL_MAGIC, 1, unsigned)
-
-int kfree (void *);
 
 struct buffer {
         uint16_t data[BUFFER_SIZE];
